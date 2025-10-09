@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
     private bool isFlying = false;
     private float lastSpaceTime = -1f;
 
+    // 公開用ゲッター
+    public bool IsFly => isFlying;
+    public bool IsUI => cursorLocked;
+
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
