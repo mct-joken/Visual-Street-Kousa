@@ -28,7 +28,8 @@ public class MercatorMapper : MonoBehaviour
 
         // メルカトルY → Y座標（逆スケーリング）
         float y = (mercatorMax - mercatorY) / (mercatorMax - mercatorMin) * imageHeight;
-
+        Debug.Log("" + lat + "," + lon);
+        Debug.Log("" + x +","+ y);
         return new Vector2(x, y);
     }
 }

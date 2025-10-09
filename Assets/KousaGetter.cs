@@ -9,10 +9,10 @@ using TMPro;
 
 public class KousaGetter : MonoBehaviour
 {
-    [SerializeField] private TMP_Text outputText;
     [SerializeField]Object mapper;
     public Texture2D texture;
-    public bool finish=false;
+    public bool finish = false;
+    [SerializeField] public bool realtime = false;
     [SerializeField] private string imageURL = "https://example.com/image.jpg";
     private void Awake()
     {
@@ -21,14 +21,6 @@ public class KousaGetter : MonoBehaviour
             + (100+System.DateTime.Now.Day).ToString().Remove(0,1)+
             "0000" + "_kosafcst-s_jp_jp.png";
         StartCoroutine(LoadImageFromURL(imageURL));
-    }
-
-    private void Update()
-    {
-        if (finish) {
-            int val = Getkousa(35, 115, false);
-            outputText.text = $"黄砂予測値: {val}";
-        }
     }
 
     Texture2D createReadabeTexture2D(Texture2D texture2d)
@@ -123,6 +115,10 @@ public class KousaGetter : MonoBehaviour
 
         // リソースの解放
         request.Dispose();
+    }
+    public void realtimew(bool a)
+    {
+        realtime = a;
     }
     public int Getkousa(float lat,float lon,bool realtime) {
         MercatorMapper m =mapper.GetComponent<MercatorMapper>();

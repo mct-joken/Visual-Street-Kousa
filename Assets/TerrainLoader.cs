@@ -17,8 +17,8 @@ public class GsiTerrainFromAddress : MonoBehaviour
     public float tileSize = 1000f;
     public float maxHeight = 3000f;
 
-    private double latitude;
-    private double longitude;
+    public double latitude;
+    public double longitude;
     // 公開用ゲッター
     public double Latitude => latitude;
     public double Longitude => longitude;
