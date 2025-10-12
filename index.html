@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Visual Street Kousa v1.5 webGL Test.loader.js";
+      var loaderUrl = buildUrl + "/_Visual Street Kousa v1.5 webGL Test.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Visual Street Kousa v1.5 webGL Test.data.unityweb",
-        frameworkUrl: buildUrl + "/Visual Street Kousa v1.5 webGL Test.framework.js.unityweb",
-        codeUrl: buildUrl + "/Visual Street Kousa v1.5 webGL Test.wasm.unityweb",
+        dataUrl: buildUrl + "/_Visual Street Kousa v1.5 webGL Test.data.unityweb",
+        frameworkUrl: buildUrl + "/_Visual Street Kousa v1.5 webGL Test.framework.js.unityweb",
+        codeUrl: buildUrl + "/_Visual Street Kousa v1.5 webGL Test.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "NIT MC_MCT Joken",
         productName: "Visual Street Kousa 2025",
@@ -108,7 +108,7 @@
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
+                  document.makeFullscreen('unity-container');
                 };
               }).catch((message) => {
                 alert(message);
